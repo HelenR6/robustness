@@ -110,6 +110,7 @@ MODEL_LOADER_ARGS = [
     ['dataset', list(datasets.DATASETS.keys()), '', REQ],
     ['data', str, 'path to the dataset', '/tmp/'],
     ['arch', str, 'architecture (see {cifar,imagenet}_models/', REQ],
+    ['model-name', str, 'model name', REQ],
     ['batch-size', int, 'batch size for data loading', BY_DATASET],
     ['workers', int, '# data loading workers', 30],
     ['resume', str, 'path to checkpoint to resume from', None],
