@@ -93,7 +93,7 @@ def make_and_restore_model(*_, arch, dataset, resume_path=None,
         if ch.cuda.is_available():
             checkpoint = ch.load(resume_path, pickle_module=dill)
         else:
-            checkpoint = ch.load(resume_path, pickle_module=dill,map_location=torch.device('cpu'))
+            checkpoint = ch.load(resume_path, pickle_module=dill,map_location=ch.device('cpu'))
         
         # Makes us able to load models saved with legacy versions
         state_dict_path = 'model'
