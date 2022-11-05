@@ -274,8 +274,11 @@ class AttackerModel(ch.nn.Module):
         self.model = model
         self.attacker = Attacker(model, dataset)
 
+#     def forward(self, inp, target=None, make_adv=False, with_latent=False,
+#                 fake_relu=False, no_relu=False, with_image=True, **attacker_kwargs):
+# previously, with_image is set to True
     def forward(self, inp, target=None, make_adv=False, with_latent=False,
-                fake_relu=False, no_relu=False, with_image=True, **attacker_kwargs):
+                fake_relu=False, no_relu=False, with_image=False, **attacker_kwargs):
         """
         Main function for running inference and generating adversarial
         examples for a model.
